@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="digitalcoinj-0.12-SNAPSHOT">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/libs/digitalcoinj-0.12-SNAPSHOT.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+﻿<?xml version='1.0' encoding='UTF-8'?>
 <resources>
   <string name="toast_wallet_reset">הארנק אופס, התאוששת תקח זמן מה.</string>
   <string name="wallet_disclaimer_fragment_remind_safety">השימוש באחריותך, קרא את הוראות השימוש</string>
@@ -209,7 +209,7 @@
   <string name="about_copyright_title">זכויות יוצרים</string>
   <string name="about_license_title">רישיון</string>
   <string name="about_source_title">קוד מקור</string>
-  <string name="about_credits_bitcoinj_title">אפליקציה זו משתמשת בdigitalcoinj %s</string>
+  <string name="about_credits_bitcoinj_title">אפליקציה זו משתמשת בhamradiocoinj %s</string>
   <string name="about_credits_zxing_title">אפליקציה זו משתמש ב\'zxing\'</string>
   <string name="about_credits_icon_title">אפליקציה זו משתמשת בסמליל של \'bitboy\'</string>
   <string name="about_community_googleplus_title">קהילת גוגל+</string>

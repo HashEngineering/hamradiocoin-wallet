@@ -69,10 +69,11 @@
 		android:id="@+id/wallet_options_about"
 		android:showAsAction="never"
 		android:title="@string/about_title"/>
-	<item
+	<!--s<item
 		android:id="@+id/wallet_options_donate"
 		android:showAsAction="never"
 		android:title="@string/wallet_options_donate"/>
+	-->
 	<item
 		android:id="@+id/wallet_options_help"
 		android:showAsAction="never"
