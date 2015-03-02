@@ -1,7 +1,5 @@
-This is a work in progress and still not working...
-But it will soon.
 
-Welcome to _digitalcoin Wallet_, a standalone digitalcoin payment app for your Android device!
+Welcome to _hamradiocoin Wallet_, a standalone hamradiocoin payment app for your Android device!
 
 This project contains several sub-projects:
 
