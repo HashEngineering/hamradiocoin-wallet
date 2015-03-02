@@ -3,10 +3,10 @@
   <string name="toast_wallet_reset">Il portafoglio è stato reinizializzato,\noccorrerà del tempo per ripristinarlo</string>
   <string name="wallet_disclaimer_fragment_remind_safety">Usalo a tuo rischio. Leggi le &lt;u&gt;avvertenze per la sicurezza&lt;/u&gt;.</string>
   <string name="wallet_disclaimer_fragment_remind_backup">Hai bisogno di &lt;u&gt;eseguire un backup del tuo portafoglio&lt;/u&gt;!</string>
-  <string name="blockchain_state_progress_hours">%1$s, %2$d ore indietro</string>
-  <string name="blockchain_state_progress_days">%1$s, %2$d giorni indietro</string>
-  <string name="blockchain_state_progress_weeks">%1$s, %2$d settimane indietro</string>
-  <string name="blockchain_state_progress_months">%1$s, %2$d mesi indietro</string>
+  <string name="blockchain_state_progress_hours">%1$s, %2$d ore mancanti</string>
+  <string name="blockchain_state_progress_days">%1$s, %2$d giorni mancanti</string>
+  <string name="blockchain_state_progress_weeks">%1$s, %2$d settimane mancanti</string>
+  <string name="blockchain_state_progress_months">%1$s, %2$d mesi mancanti</string>
   <string name="blockchain_state_progress_downloading">Sincronizzazione con la rete</string>
   <string name="blockchain_state_progress_stalled">Sincronizzazione bloccata</string>
   <string name="blockchain_state_progress_problem_storage">Sincronizzazione: problema di Memorizzazione</string>
@@ -79,7 +79,7 @@
   <string name="send_coins_sending_msg">Invio in corso…</string>
   <string name="send_coins_sent_msg">Inviato!</string>
   <string name="send_coins_failed_msg">Fallito!</string>
-  <string name="send_coins_error_msg">Problemi durante l\'invio dei hamradiocoins!</string>
+  <string name="send_coins_error_msg">Problemi durante l\'invio dei hamradiocoin!</string>
   <string name="send_coins_options_empty">Portafoglio vuoto</string>
   <string name="send_coins_address_context_clear_title">Inserisci nuovo indirizzo</string>
   <string name="sweep_wallet_activity_title">Scan wallet cartaceo</string>
@@ -91,7 +91,7 @@
   <string name="sweep_wallet_fragment_request_wallet_balance_progress">Caricamento saldo…</string>
   <string name="sweep_wallet_fragment_request_wallet_balance_failed_title">Caricamento saldo del portafoglio fallito</string>
   <string name="sweep_wallet_options_reload">Ricarica saldo</string>
-  <string name="request_coins_activity_title">Richiedi hamradiocoins</string>
+  <string name="request_coins_activity_title">Richiedi hamradiocoin</string>
   <string name="request_coins_fragment_amount_label">Importo richiesto (opzionale)</string>
   <string name="request_coins_fragment_accept_bluetooth_payment">Accettazione pagamento via Bluetooth per un procedimento più affidabile</string>
   <string name="request_coins_fragment_initiate_request_qr">Questo codice deve essere scansionato dal mittente.</string>
@@ -103,7 +103,7 @@
   <string name="address_book_list_receiving_title">I tuoi indirizzi</string>
   <string name="address_book_list_sending_title">Invio di indirizzi</string>
   <string name="address_book_empty_text">Nessun indirizzo in rubrica</string>
-  <string name="address_book_context_send_title">Invia hamradiocoins all\'indirizzo</string>
+  <string name="address_book_context_send_title">Invia hamradiocoin all\'indirizzo</string>
   <string name="address_book_context_edit_title">Modifica indirizzo</string>
   <string name="address_book_context_remove_title">Rimuovi indirizzo</string>
   <string name="address_book_context_show_qr_title">Mostra codice QR</string>
@@ -124,7 +124,7 @@
   <string name="transaction_row_message_own_unbroadcasted">Questo pagamento non è ancora stato trasmesso.</string>
   <string name="transaction_row_message_received_direct">Questo pagamento è stato ricevuto direttamente. C\'è il rischio che non diventi spendibile.</string>
   <string name="transaction_row_message_received_unconfirmed_unlocked">Questo pagamento dovrebbe diventare spendibile entro pochi minuti.</string>
-  <string name="transaction_row_message_received_unconfirmed_locked">Questo pagamento non è standard e dovrebbe non bisognerebbe fidarsi.</string>
+  <string name="transaction_row_message_received_unconfirmed_locked">Questo pagamento non è standard e non bisognerebbe fidarsi.</string>
   <string name="transaction_row_message_received_dead">Questo pagamento è stato revocato dal mittente.</string>
   <string name="transaction_row_message_received_dust">Questo piccolo importo probabilmente non sarà mai speso economicamente.</string>
   <string name="network_monitor_activity_title">Controllo della Rete</string>
@@ -135,7 +135,7 @@
   <string name="import_keys_dialog_title">Ripristina portafoglio</string>
   <string name="import_keys_dialog_message">Scegli il file di backup di un portafoglio dalla memoria di app-privata o esterna:</string>
   <string name="restore_wallet_dialog_replace_warning">Stai per sostituire il tuo attuale portafoglio. Se non hai un backup tutte le monete nell\' attuale portafoglio andranno perse.</string>
-  <string name="import_keys_dialog_warning">Importante: Non caricare chiavi private da dubbiose provenienze! Altri possono ottenere il controllo sui vostri fondi se lo fate.</string>
+  <string name="import_keys_dialog_warning">Importante: Non caricare chiavi private di dubbia provenienza! Altri possono ottenere il controllo sui vostri fondi se lo fate.</string>
   <string name="import_keys_dialog_file_security_encrypted">password criptata</string>
   <string name="import_keys_dialog_file_security_unencrypted">non criptata</string>
   <string name="import_keys_dialog_file_security_external">memoria esterna</string>
@@ -170,14 +170,14 @@
   <string name="input_parser_invalid_bitcoin_uri">URI hamradiocoin non valido:\n%s</string>
   <string name="input_parser_invalid_address">Ricevuto indirizzo hamradiocoin non valido!\n(Hai mescolato Mainnet/Testnet?)</string>
   <string name="input_parser_unverifyable_paymentrequest">Impossibile verificare la richiesta di pagamento:\n%s</string>
-  <string name="input_parser_invalid_paymentrequest">Richiesta di pagamento invalida:\n%s</string>
+  <string name="input_parser_invalid_paymentrequest">Richiesta di pagamento non valida:\n%s</string>
   <string name="input_parser_invalid_transaction">Transazione non valida:\n%s</string>
   <string name="preferences_activity_title">Impostazioni</string>
   <string name="preferences_category_main">Preferenze</string>
   <string name="preferences_category_diagnostics">Diagnostica</string>
   <string name="preferences_category_labs">Laboratori</string>
   <string name="preferences_precision_title">Denominazione e precisione</string>
-  <string name="preferences_precision_summary">Unità per mostrare gli importi. Questo non influisce calcoli.</string>
+  <string name="preferences_precision_summary">Unità per mostrare gli importi. Questo non influisce nei calcoli.</string>
   <string name="preferences_connectivity_notification_title">Indicatore di connettività</string>
   <string name="preferences_connectivity_notification_summary">Mostra il numero corrente di peer connessi nell\'area di notifica.</string>
   <string name="preferences_trusted_peer_title">Peer attendibili</string>
@@ -234,8 +234,8 @@
   <string name="button_paste">Incolla</string>
   <string name="button_share">Condividi</string>
   <string name="button_set_as_default">Imposta come predefinito</string>
-  <string name="button_request_coins">Richiedi hamradiocoins</string>
-  <string name="button_send_coins">Invia hamradiocoins</string>
+  <string name="button_request_coins">Richiedi hamradiocoin</string>
+  <string name="button_send_coins">Invia hamradiocoin</string>
   <string name="button_scan">Analizza</string>
   <string name="button_edit_address">Aggiungi/modifica indirizzo</string>
   <string name="button_settings">Impostazioni</string>
