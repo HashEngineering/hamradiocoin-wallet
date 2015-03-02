@@ -2,7 +2,7 @@
 <resources>
   <string name="help_wallet">\n<![CDATA[
 		<p>
-			La parte in alto a sinistra dello schermo mostra gli indirizzo hamradiocoin che le altre persone hanno bisogno per poterti inviare dei hamradiocoin.
+			La parte in alto a sinistra dello schermo mostra il tuo indirizzo hamradiocoin di cui gli altri hanno bisogno per poterti inviare gli hamradiocoin.
 			Premi per cambiare l\'indirizzo.
 		</p>
 		<p>
@@ -17,18 +17,18 @@
 		<p>
 			In fondo allo schermo troverai la lista delle tue transazioni, inizialmente vuota.
 			Le transazioni da confermare saranno visualizzate in grigio finchè non confermate.
-			Premi su una di esse per aggiungere gli indirizzi mittente o destinazione nella rubrica.
+			Premi su una di esse per aggiungere gli indirizzi mittente o destinatario nella rubrica.
 			Trascina a destra o sinistra per impostare dei filtri alla lista.
 		</p>
 		<p>
-			Puoi inviare o ricevere hamradiocoins premendo i tasti nella barra delle azioni.
+			Puoi inviare o ricevere hamradiocoin premendo i tasti nella barra delle azioni.
 			Sono disponibili ulteriori comandi nel menù opzioni.
 		</p>
 	]]>\n\t</string>
   <string name="help_request_coins">\n<![CDATA[
 		<p>
-			Utilizzando questa finestra puoi richiedere dei hamradiocoin ad un\'altra persona
-			(che dovrebbe aver già installato hamradiocoin Wallet).
+			Utilizzando questa finestra puoi richiedere hamradiocoin ad un\'altra persona
+			(che dovrebbe aver già installato il Wallet hamradiocoin).
 		</p>
 		<p>
 			Come prima cosa puoi inserire il numero di hamradiocoin da richiedere.
@@ -39,19 +39,19 @@
 			La persona che riceve la richiesta dovrà cliccare l\'URL hamradiocoin.
 		</p>
 		<p>
-			In ogni modo alla persona ricevente verrà presentata un modulo precompilato per inviare i hamradiocoin.
+			In ogni modo al destinatario verrà presentato un modulo precompilato per inviare gli hamradiocoin.
 			Per confermare l\'invio dovrà solo accettare la transazione.
 		</p>
 	]]>\n\t</string>
   <string name="help_send_coins">\n<![CDATA[
 		<p>
-			Hai iniziato il processo per inviare hamradiocoins.
-			Sei giunto qui a partire dalla schermata principale o cliccando su di un URL hamradiocoin dal tuo browser.
+			Hai iniziato il processo per inviare hamradiocoin.
+			Sei giunto qui a partire dalla schermata principale o cliccando su un URL hamradiocoin dal tuo browser.
 		</p>
 		<p>
-			Come prima cosa è necessario inserire l\'indirizzo hamradiocoin a cui inviare.
+			Come prima cosa è necessario inserire l\'indirizzo hamradiocoin a cui inviarli.
 			L\'indirizzo si autocompleterà in base al contenuto della tua rubrica.
-			Puoi anche acquisire un codice QR che contiene indirizzi hamradiocoin o richieste hamradiocoin premendo il tasto QR sulla barra azioni.
+			Puoi anche acquisire un codice QR che contiene indirizzi hamradiocoin o richieste di hamradiocoin premendo il tasto QR sulla barra azioni.
 		</p>
 		<p>
 			Ti è poi possibile visualizzare quanti hamradiocoin puoi spendere.
@@ -62,30 +62,30 @@
 			Puoi infine inserire il numero di hamradiocoin da inviare.
 		</p>
 		<p>
-			Puoi inserire una transazione anche senza collegamento ad Internet, verrà inviata alla prossima esecuzione di hamradiocoin Wallet.
+			Puoi inserire una transazione anche senza collegamento ad Internet, verrà inviata alla prossima esecuzione del wallet.
 			Se vuoi che la transazione venga processata il prima possibile assicurati di avere un buon collegamento ad Internet.
 		</p>
 		<p>
 			Nota:
-			I pagamenti non possono essere annullate!
+			I pagamenti non possono essere annullati!
 			Controlla sempre la correttezza degli indirizzi di destinazione.
 		</p>
 	]]>\n\t</string>
   <string name="help_safety">\n<![CDATA[
 		<p>
-			<b>Alcune informazioni riguardo la sicurezza relativa ai vostri hamradiocoins:</b>
+			<b>Alcune informazioni riguardo la sicurezza relativa ai vostri hamradiocoin:</b>
 		</p>
 		<p>
-			I hamradiocoins di hamradiocoin Wallet vengono memorizzati sul dispositivo.
+			Gli hamradiocoins di questo wallet vengono memorizzati sul dispositivo.
 			<b>Se perdi il dispositivo, perdi i tuoi hamradiocoin.</b>
 			Esattamente come denaro nel tuo vero portafoglio.
 		</p>
 		<p>
-			<b>Prima di disinstallare hamradiocoin Wallet</b> (o cancellare i dati dell\'applicazione o del dispositivo), <b>trasferisci i tuoi hamradiocoins ad un altro portafoglio</b>.
+			<b>Prima di disinstallare il wallet hamradiocoin</b> (o cancellare i dati dell\'applicazione o del dispositivo), <b>trasferisci i tuoi hamradiocoins ad un altro portafoglio</b>.
 			Eventuali hamradiocoin non trasferiti saranno persi per sempre.
 		</p>
 		<p>
-			<b>I pagamenti non possono essere annullate</b>.
+			<b>I pagamenti non possono essere annullati</b>.
 			Se invi i tuoi hamradiocoin ad indirizzi errati non c\'è modo di riaverli indietro
 			a meno che tu non conosca il ricevente e che sia disponibile a restituirli.
 		</p>
