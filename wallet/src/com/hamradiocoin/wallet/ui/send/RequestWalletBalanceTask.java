@@ -17,6 +17,25 @@
 
 package com.hamradiocoin.wallet.ui.send;
 
+import android.os.Handler;
+import android.os.Looper;
+import com.google.bitcoin.core.*;
+import com.google.bitcoin.core.TransactionConfidence.ConfidenceType;
+import com.google.bitcoin.script.ScriptBuilder;
+import com.google.common.base.Charsets;
+import com.google.common.io.BaseEncoding;
+import com.hamradiocoin.wallet.Constants;
+import com.hamradiocoin.wallet.R;
+import com.hamradiocoin.wallet.util.Io;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import javax.annotation.CheckForNull;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -27,29 +46,6 @@ import java.net.URL;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-
-import javax.annotation.CheckForNull;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-
-import com.google.bitcoin.core.*;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import android.os.Handler;
-import android.os.Looper;
-
-import com.google.bitcoin.core.TransactionConfidence.ConfidenceType;
-import com.google.common.base.Charsets;
-import com.google.common.io.BaseEncoding;
-
-import com.hamradiocoin.wallet.util.Io;
-import com.hamradiocoin.wallet.Constants;
-
-import com.hamradiocoin.wallet.R;
 
 /**
  * @author Andreas Schildbach
@@ -90,14 +86,19 @@ public final class RequestWalletBalanceTask
 			public void run()
 			{
 				final StringBuilder url = new StringBuilder(Constants.BITEASY_API_URL);
-                if(CoinDefinition.UnspentAPI != CoinDefinition.UnspentAPIType.Blockr)
+                if(CoinDefinition.UnspentAPI == CoinDefinition.UnspentAPIType.BitEasy)
                 {
                     url.append("unspent-outputs");
 				    url.append("?per_page=MAX");
 				    for (final Address address : addresses)
 					    url.append("&address[]=").append(address.toString());
                 }
-                else
+				else if(CoinDefinition.UnspentAPI == CoinDefinition.UnspentAPIType.Cryptoid)
+				{
+					url.append("&key=1c7ad2796e88");    //Cryptoid API key
+					url.append("&active=").append(addresses[0].toString());
+				}
+                else if(CoinDefinition.UnspentAPI == CoinDefinition.UnspentAPIType.Blockr)
                 {
                     int i = 0;
                     for (final Address address : addresses)
@@ -138,7 +139,7 @@ public final class RequestWalletBalanceTask
 
 						final JSONObject json = new JSONObject(content.toString());
                         JSONArray jsonOutputs = null;
-                        if(CoinDefinition.UnspentAPI != CoinDefinition.UnspentAPIType.Blockr)
+                        if(CoinDefinition.UnspentAPI == CoinDefinition.UnspentAPIType.BitEasy)
                         {
                             final int status = json.getInt("status");
                             if (status != 200)
@@ -153,7 +154,17 @@ public final class RequestWalletBalanceTask
 
                             jsonOutputs = jsonData.getJSONArray("outputs");
                         }
-                        else
+						else if(CoinDefinition.UnspentAPI == CoinDefinition.UnspentAPIType.Cryptoid)
+						{
+							//String success = json.getString("status");
+
+							//if (!success.equals(success))
+							//    throw new IOException("api status " + "not successful" + " when fetching unspent outputs");
+
+							//JSONObject dataJson = json.getJSONObject("data");
+							jsonOutputs = json.getJSONArray("unspent_outputs");
+						}
+                        else if(CoinDefinition.UnspentAPI == CoinDefinition.UnspentAPIType.Blockr)
                         {
                             String success = json.getString("status");
 
@@ -175,7 +186,7 @@ public final class RequestWalletBalanceTask
                             byte[] uxtoScriptBytes = null;
                             BigInteger uxtoValue = null;
 
-                            if(CoinDefinition.UnspentAPI != CoinDefinition.UnspentAPIType.Blockr)
+                            if(CoinDefinition.UnspentAPI == CoinDefinition.UnspentAPIType.BitEasy)
                             {
                                 if (jsonOutput.getInt("is_spent") != 0)
                                     throw new IllegalStateException("UXTO not spent");
@@ -184,7 +195,17 @@ public final class RequestWalletBalanceTask
                                 uxtoScriptBytes = HEX.decode(jsonOutput.getString("script_pub_key"));
                                 uxtoValue = new BigInteger(jsonOutput.getString("value"));
                             }
-                            else
+							if(CoinDefinition.UnspentAPI == CoinDefinition.UnspentAPIType.Cryptoid)
+							{
+								//if (jsonOutput.getInt("is_spent") != 0)
+								//     throw new IllegalStateException("UXTO not spent");
+								uxtoHash = new Sha256Hash(jsonOutput.getString("tx_hash"));
+								uxtoIndex = jsonOutput.getInt("tx_ouput_n");
+								//uxtoScriptBytes = HEX.decode(jsonOutput.getString("script_pub_key"));
+								uxtoScriptBytes = ScriptBuilder.createOutputScript(addresses[0]).getProgram();
+								uxtoValue = BigInteger.valueOf(jsonOutput.getLong("value"));
+							}
+                            else if(CoinDefinition.UnspentAPI == CoinDefinition.UnspentAPIType.Blockr)
                             {
                                 uxtoHash = new Sha256Hash(jsonOutput.getString("tx"));
                                 uxtoIndex = jsonOutput.getInt("n");

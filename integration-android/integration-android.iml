@@ -1,21 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
-  <component name="FacetManager">
-    <facet type="android" name="Android">
-      <configuration>
-        <option name="MANIFEST_FILE_RELATIVE_PATH" value="/../wallet/AndroidManifest.xml" />
-        <option name="RES_FOLDER_RELATIVE_PATH" value="/../wallet/res" />
-        <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/../wallet/assets" />
-        <option name="LIBS_FOLDER_RELATIVE_PATH" value="/../wallet/libs" />
-      </configuration>
-    </facet>
-  </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/gen" isTestSource="false" generated="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -31,4 +20,3 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.json:json:20080701" level="project" />
   </component>
 </module>
-

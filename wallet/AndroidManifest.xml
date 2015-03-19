@@ -95,7 +95,7 @@
 			<intent-filter>
 				<action android:name="android.nfc.action.NDEF_DISCOVERED" />
 
-				<data android:mimeType="application/x-dgctx" />
+				<data android:mimeType="application/x-hamtx" />
 
 				<category android:name="android.intent.category.DEFAULT" />
 			</intent-filter>
@@ -215,12 +215,12 @@
 
 		<provider
 			android:name=".AddressBookProvider"
-			android:authorities="hashengineering.hamradiocoin.wallet.address_book"
+			android:authorities="com.hamradiocoin.wallet.address_book"
 			android:exported="false" />
         <!-- Need to update this for the coin -->
 		<provider
 			android:name=".ExchangeRatesProvider"
-			android:authorities="hashengineering.hamradiocoin.wallet.exchange_rates"
+			android:authorities="com.hamradiocoin.wallet.exchange_rates"
 			android:exported="false" />
 
 		<receiver

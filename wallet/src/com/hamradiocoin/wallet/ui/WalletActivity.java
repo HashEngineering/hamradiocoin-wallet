@@ -17,33 +17,6 @@
 
 package com.hamradiocoin.wallet.ui;
 
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.Reader;
-import java.io.StringReader;
-import java.io.Writer;
-import java.text.DateFormat;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.TimeZone;
-
-import javax.annotation.Nonnull;
-
-
-import org.bitcoinj.wallet.Protos;
-
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -69,35 +42,29 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
-import com.google.bitcoin.core.AddressFormatException;
-import com.google.bitcoin.core.ECKey;
-import com.google.bitcoin.core.Transaction;
-import com.google.bitcoin.core.VerificationException;
-import com.google.bitcoin.core.Wallet;
+import com.google.bitcoin.core.*;
 import com.google.bitcoin.core.Wallet.BalanceType;
 import com.google.bitcoin.store.UnreadableWalletException;
 import com.google.bitcoin.store.WalletProtobufSerializer;
 import com.google.common.base.Charsets;
-
-import com.hamradiocoin.wallet.WalletApplication;
-import com.hamradiocoin.wallet.data.PaymentIntent;
-import com.hamradiocoin.wallet.util.Crypto;
-import com.hamradiocoin.wallet.util.Io;
 import com.hamradiocoin.wallet.Configuration;
 import com.hamradiocoin.wallet.Constants;
+import com.hamradiocoin.wallet.R;
+import com.hamradiocoin.wallet.WalletApplication;
+import com.hamradiocoin.wallet.data.PaymentIntent;
 import com.hamradiocoin.wallet.ui.send.SendCoinsActivity;
 import com.hamradiocoin.wallet.ui.send.SweepWalletActivity;
-import com.hamradiocoin.wallet.util.CrashReporter;
-import com.hamradiocoin.wallet.util.Iso8601Format;
-import com.hamradiocoin.wallet.util.Nfc;
-import com.hamradiocoin.wallet.util.WalletUtils;
+import com.hamradiocoin.wallet.util.*;
+import org.bitcoinj.wallet.Protos;
+
+import javax.annotation.Nonnull;
+import java.io.*;
+import java.text.DateFormat;
+import java.util.*;
 
 //import com.google.bitcoin.core.CoinDefinition;
-import com.hamradiocoin.wallet.util.WholeStringBuilder;
-import com.hamradiocoin.wallet.R;
 
 
 /**
@@ -299,9 +266,9 @@ public final class WalletActivity extends AbstractWalletActivity
 				HelpDialogFragment.page(getSupportFragmentManager(), R.string.help_safety);
 				return true;
 
-//			case R.id.wallet_options_donate:
-//				handleDonate();
-//				return true;
+			case R.id.wallet_options_donate:
+				handleDonate();
+				return true;
 
 			case R.id.wallet_options_help:
 				HelpDialogFragment.page(getSupportFragmentManager(), R.string.help_wallet);
